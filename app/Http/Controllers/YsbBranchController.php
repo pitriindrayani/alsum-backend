@@ -98,7 +98,7 @@ class YsbBranchController extends Controller
     
         // Check if Name exists
         if ($request->branch_name) {
-            $checkBranch = YsbPosition::where(['branch_name' => $request->branch_name, 'state' => true])->first();
+            $checkBranch = YsbBranch::where(['branch_name' => $request->branch_name, 'state' => true])->first();
             if ($checkBranch) {
                 return response()->json([
                     'status' => 400,
